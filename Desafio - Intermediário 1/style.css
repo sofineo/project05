@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-heading: 'Staatliches', cursive;
+  --ff-body: 'Palanquin', sans-serif;
+  
+  --bg-color-first: hsl(218, 17%, 62%);
+  --bg-color-second: hsl(233, 100%, 97%);
+  --bg-color-heading-first: hsl(275, 18%, 79%);
+  --bg-color-heading-second: hsl(312, 91%, 96%);
+  --color-heading-first: hsla(0, 0%, 100%);
+  --color-heading-second: hsl(232, 17%, 35%);
+  --color-body: hsl(274, 84%, 12%);
+  
+  font-size: 62.5%;
+  --fs-body: 2rem;
+  --fs-heading: 4rem;
+}
+
+.page {
+  font-family: var(--ff-body);
+  text-align: center;
+  min-width: 28rem;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+header {
+  background-color: var(--bg-color-first);
+  height: 279px;
+}
+
+header img {
+  width: 137px;
+  height: 137px;
+  object-fit: contain;
+  margin: 3.2rem auto;
+}
+
+header h1 {
+  font-family: var(--ff-heading);
+  font-size:  var(--fs-heading);
+  font-weight: 400;
+  background-color: var(--bg-color-heading-first);
+  color: var(--color-heading-first);
+  margin-bottom: 2.8rem ;
+}
+
+main {
+  background-color: var(--bg-color-second);
+  padding: 14px 32px 60px;
+}
+
+p {
+  font-size: clamp(1.2rem, 5vw, var(--fs-body));
+  font-weight: 400;
+  color: var(--color-body);
+  line-height: 1.5rem;
+  margin-bottom: 5rem;
+  
+  max-width: 30.9rem;
+  max-height: 8.7rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.card-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.card {
+  display: flex;
+  position: relative;
+}
+
+.card img {
+  animation: downtop 700ms;
+}
+
+.card h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  background-color: var(--bg-color-heading-second);
+  color: var(--color-heading-second);
+  
+  position: absolute;
+  width: 11.2rem;
+  height: 3.5rem;
+  right: 1.6rem;
+  top: 1.6rem;
+  border-radius: 2rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: topdown 700ms 200ms backwards;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
